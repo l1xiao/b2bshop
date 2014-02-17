@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0094)http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=reply&id=2 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ECSHOP 管理中心 - 评论详情 </title>
+<meta name="robots" content="noindex, nofollow">
+
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css">
+<style type="text/css"></style></head>
+<body>
+
+<h1>
+<span class="action-span"><a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=list">用户评论</a></span>
+<span class="action-span1"><a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 评论详情 </span>
+<div style="clear:both"></div>
+</h1>
+<!-- comment content list -->
+<div class="main-div">
+  <table width="100%">
+    <tbody><tr>
+      <td>
+      <a href="mailto:ecshop@ecshop.com"><b>ecshop</b></a>&nbsp;于      &nbsp;2009-05-12 21:48:15&nbsp;对&nbsp;<b>多普达Touch HD</b>&nbsp;发表评论    </td>
+    </tr>
+    <tr>
+      <td><hr color="#dadada" size="1"></td>
+    </tr>
+    <tr>
+      <td>
+        <div style="overflow:hidden; word-break:break-all;">这个我不是很适合我</div>
+        <div align="right"><b>评论等级:</b> 5&nbsp;&nbsp;<b>IP地址</b>: 0.0.0.0</div>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+                <input type="button" onclick="location.href=&#39;comment_manage.php?act=check&amp;check=allow&amp;id=2&#39;" value="允许显示" class="button">
+            </td>
+    </tr>
+  </tbody></table>
+</div>
+
+
+
+<div class="main-div">
+<form method="post" action="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=action" name="theForm" onsubmit="return validate()">
+<table border="0" align="center">
+  <tbody><tr><th colspan="2">
+  <strong>回复评论</strong>
+  </th></tr>
+  <tr>
+    <td>用户名:</td>
+    <td><input name="user_name" type="text" value="root" size="30" readonly="true"></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><input name="email" type="text" value="645562313@qq.com" size="30" readonly="true"></td>
+  </tr>
+  <tr>
+    <td>回复内容:</td>
+    <td><textarea name="content" cols="50" rows="4" wrap="VIRTUAL"></textarea></td>
+  </tr>
+    <tr>
+    <td></td>
+    <td><input name="send_email_notice" type="checkbox" value="1">邮件通知</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <input name="submit" type="submit" value=" 确定 " class="button">
+      <input type="reset" value=" 重置 " class="button">
+            <input type="hidden" name="comment_id" value="2">
+      <input type="hidden" name="comment_type" value="0">
+      <input type="hidden" name="id_value" value="22">
+    </td>
+  </tr>
+</tbody></table>
+</form>
+</div>
+
+</body></html>

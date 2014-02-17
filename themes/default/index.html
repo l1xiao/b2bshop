@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap 3, from LayoutIt!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="<?php echo base_url('themes/default/css/bootstrap.min.css');?>" rel="stylesheet">
+	<link href="<?php echo base_url('themes/default/css/index.css')?>" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('themes/default/css/messenger-theme-flat.css')?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('themes/default/css/messenger.css')?>">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="<?php echo base_url('themes/default/js/jquery.min.js');?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('themes/default/js/bootstrap.min.js');?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('themes/default/js/scripts.js');?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('themes/default/js/messenger.min.js');?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('themes/default/js/messenger-theme-flat.js');?>"></script>
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#" style="color:white">首页</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">套餐专区</a>
+						</li>
+						<li>
+							<a href="#">进口零食</a>
+						</li>
+						<li>
+							<a href="#">定点送达</a>
+						</li>
+						<li>
+							<a href="#">加急送</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control">
+							</div> <button type="submit" class="btn btn-default">搜索</button>
+						</form>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#login">
+							  登录
+							</a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#registrar">
+							  注册
+							</a>
+						</li>
+						<li>
+							<a href="#" id="qty">0</a>
+						</li>
+						<li>
+							<a href="shopcart.html">购物车</a>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="carousel slide" id="carousel-917061">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-917061">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-917061">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-917061">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img alt="" src="<?php echo base_url('themes/default/img/1.jpg')?>">
+						<div class="carousel-caption">
+							<h4>
+								First Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="" src="<?php echo base_url('themes/default/img/1.jpg')?>">
+						<div class="carousel-caption">
+							<h4>
+								Second Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="" src="<?php echo base_url('themes/default/img/1.jpg')?>">
+						<div class="carousel-caption">
+							<h4>
+								Third Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+				</div> <a class="left carousel-control" href="#carousel-917061" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-917061" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<ul class="nav nav-pills">
+				<li class="active">
+					<a href="#">全部</a>
+				</li>
+				<li>
+					<a href="#">坚果蜜饯</a>
+				</li>
+				<li>
+					<a href="#">肉类豆干</a>
+				</li>
+				<li>
+					<a href="#">饮品饮料</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- foreach商品列表 -->
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<?php foreach ($goods as $v) :?>
+<!-- 			<div class="row clearfix">
+ -->			<div class="col-md-3 column">
+					<img alt="263x263" src="<?php echo base_url('themes/default/img/2.jpg');?>" class="img-thumbnail">
+					<form method='post' id="<?php  echo $v['goods_id'];?>"> 
+					<ul class="list-unstyled">
+							<li><?php  echo $v['goods_name'];?></li>
+							<input type="hidden" value="<?php  echo $v['goods_name'];?>" name="goods_name">
+							<input type="hidden" value="<?php  echo $v['goods_id'];?>" name="goods_id">
+							<input type="hidden" value="<?php  echo $v['shop_price'];?>" name="shop_price">
+							<input type="hidden" value="1" name="goods_nums">
+							<li>￥<?php echo  $v['shop_price'] ?></li>
+						
+					</ul>
+					 <button type="button" class="btn btn-block btn-success add_to_cart" id="<?php  echo $v['goods_id'];?>">Default</button>
+					</form>
+				</div>
+		<?php endforeach; ?>
+		</div>
+	</div>
+	<div class="row clearfix footer">
+				<div class="col-md-12 column">
+					<div class="row clearfix">
+						<div class="col-md-2 column">
+							 <a id="modal-64641" href="#modal-container-64641" role="button" class="btn" data-toggle="modal">配送时间</a>
+							
+							<div class="modal fade" id="modal-container-64641" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												“59分精准送达”是速记递始终保持的配送体系，具体介绍如下：
+											</h4>
+										</div>
+										<div class="modal-body">
+											①限时达：配送员每逢整点发货（将前一个59分钟内的所有订单统一发出），发货后59分内送达。如13:00发出12:00-12:59之间收到的订单，承诺在13:00-13:59这个59分区间内限时送达，超出时间订单可选择拒签或9折。<br>
+											②精准送：即定时送，您可以选择您方便的任意一个59分钟（时间段），配送员将在您的“期望时间段”内为您精准送达。<br>
+											友情提醒：配送服务时间为10:00-22:00，22:00为最后一个配送班次，22点以后的订单将在次日上午10点发出。
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+							 <a id="modal-783376" href="#modal-container-783376" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-783376" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						<div class="col-md-2 column">
+							 <a id="modal-616784" href="#modal-container-616784" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-616784" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+							 <a id="modal-572417" href="#modal-container-572417" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-572417" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						<div class="col-md-4 column">
+						</div>
+						<div class="col-md-2 column">
+							 <a id="modal-5148" href="#modal-container-5148" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-5148" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+							 <a id="modal-484618" href="#modal-container-484618" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-484618" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						<div class="col-md-2 column">
+							 <a id="modal-763287" href="#modal-container-763287" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-763287" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+							 <a id="modal-883007" href="#modal-container-883007" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+							
+							<div class="modal fade" id="modal-container-883007" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												Modal title
+											</h4>
+										</div>
+										<div class="modal-body">
+											...
+										</div>
+										<div class="modal-footer">
+											 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Registrar Modal -->
+			<div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">注册</h4>
+				  </div>
+				  <div class="modal-body">
+				   <form class="form-horizontal" role="form">
+					   <div class="form-group">
+						  <label for="inputEmail" class="col-sm-3 control-label">邮箱</label>
+						 <div class="col-sm-7">
+						   <input type="email" class="form-control" id="inputEmail" />
+						 </div>
+					   </div>
+					   <div class="form-group">
+						  <label for="inputPassword" class="col-sm-3 control-label">密码</label>
+						 <div class="col-sm-7">
+						   <input type="password" class="form-control" id="inputPassword" />
+						 </div>
+					   </div>
+					   <div class="form-group">
+						  <label for="inputPasswordAgain" class="col-sm-3 control-label">再次输入</label>
+						 <div class="col-sm-7">
+						   <input type="password" class="form-control" id="inputPassword" />
+						 </div>
+					   </div>
+					 </form>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary">注册</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+			<!-- Login Modal -->
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">登录</h4>
+				  </div>
+				  <div class="modal-body">
+				   <form class="form-horizontal" role="form">
+					   <div class="form-group">
+						  <label for="inputEmail" class="col-sm-3 control-label">邮箱</label>
+						 <div class="col-sm-7">
+						   <input type="email" class="form-control" id="inputEmail" />
+						 </div>
+					   </div>
+					   <div class="form-group">
+						  <label for="inputPassword" class="col-sm-3 control-label">密码</label>
+						 <div class="col-sm-7">
+						   <input type="password" class="form-control" id="inputPassword" />
+						 </div>
+					   </div>
+					 </form>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary">登入</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+</div>
+<script type="text/javascript">
+	$._messengerDefaults = {
+		extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+		theme: 'flat',
+	}
+
+	var qty = 0;
+	$("button.btn-success").click(function(){
+		qty += 1;
+		$('#qty').html(qty);
+		$('#qty').css({'color':'rgb(223, 61, 61)', 'font-size':'18px'});
+		$.globalMessenger().post({
+		message: '已成功加入购物车',
+		type: 'success',
+		showCloseButton: true,
+		hideAfter: 2,
+	  })
+	});
+
+	$('.add_to_cart').click(function(){
+			var id = $(this).attr('id');
+			var form = $("form[id="+id+"]");
+			var goods_name = form.find("input[name='goods_name']").attr('value');
+			var goods_id = form.find("input[name='goods_id']").attr('value');
+			var shop_price = form.find("input[name='shop_price']").attr('value');
+			var goods_nums = form.find("input[name='goods_nums']").attr('value');
+			console.log(goods_name+goods_nums+goods_id+shop_price);
+				$.ajax({
+					url: "index.php/cart/add",
+					method: "post",   
+					data:{
+						'goods_name': goods_name,
+						'goods_id': goods_id,
+						'shop_price':shop_price,
+						'goods_nums':goods_nums,
+					},
+					success: function(data) {
+						console.log('success');
+					},
+					error: function(request) {
+						console.log('error');
+					}
+				});
+			});
+</script>
+</body>
+</html>

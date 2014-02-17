@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0088)http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=list -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ECSHOP 管理中心 - 用户评论 </title>
+<meta name="robots" content="noindex, nofollow">
+
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>
+<span class="action-span1">
+  ECSHOP 管理中心
+</span>
+<span id="search_id" class="action-span1"> - 用户评论 </span>
+<div style="clear:both"></div>
+</h1>
+
+<form method="POST" action="" name="listForm" >
+
+<!-- start comment list -->
+<div class="list-div" id="listDiv">
+
+<table cellpadding="3" cellspacing="1">
+  <tbody>
+    <tr>
+      <th>编号</th>
+      <th>用户ID</th>
+      <th>用户名</th>
+      <th>评论商品ID</th>
+      <th>评论商品</th>    
+      <th>评论时间</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+    <?php foreach($comments_list as $v):?>
+    <tr>
+      <td style="background-color: rgb(255, 255, 255);">
+        <center><?php echo $v['comments_id'];?></center>
+      </td>
+      <td style="background-color: rgb(255, 255, 255);">
+        <center><?php echo $v['user_id'];?></center>
+      </td>
+      <td style="background-color: rgb(255, 255, 255);">
+        <center><?php echo $v['user_name'];?></center>
+      </td>
+      <td style="background-color: rgb(255, 255, 255);">
+        <center><?php echo $v['goods_id'];?></center>
+      </td>
+      <td style="background-color: rgb(255, 255, 255);">
+        <center><?php echo $v['goods_name'];?></center>
+      </td>
+      <td align="center" style="background-color: rgb(255, 255, 255);">
+        <?php echo $v['date'];?>
+      </td>
+      <td align="center" style="background-color: rgb(255, 255, 255);">
+        <img src="
+        <?php 
+          $v['is_showed']>0 ? $state= 'yes' :$state = 'no';
+         echo base_url("application/views/images/$state.gif");
+        ?>
+        ">
+        
+      </td>
+      <td align="center" style="background-color: rgb(255, 255, 255);">
+        <a href='<?php $comments_id = $v['comments_id'];echo site_url("admin/goods/comments_detail/$comments_id") ;?>'>
+          查看详情
+        </a>|
+        <a href="<?php $comments_id = $v['comments_id'];echo site_url("admin/goods/comments_delete/$comments_id") ;?>" >
+          隐藏
+        </a>|
+        <a href="<?php $comments_id = $v['comments_id'];echo site_url("admin/goods/comments_show/$comments_id") ;?>" >
+          显示
+        </a>
+      </td>
+    </tr>
+    <?php endforeach;?>
+  </tbody>
+</table>
+
+  <table cellpadding="4" cellspacing="0">
+    <tbody>
+      <tr>
+        <td align="right" style="background-color: rgb(255, 255, 255);">      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+          <div id="turn-page">
+            <?php echo $pageinfo;?>
+          </div>
+        </td>
+      </tr>
+  </tbody></table>
+
+</div>
+<!-- end comment list -->
+
+</form>
+
+    </div>
+    </td>
+  </tr>
+  </tbody></table>
+</div>
+
+
+<div id="footer">
+  版权所有 &copy;lxys</div>
+
+
+
+
+</body></html>

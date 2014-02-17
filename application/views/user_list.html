@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0079)http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/users.php?act=list -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ECSHOP 管理中心 - 会员列表 </title>
+<meta name="robots" content="noindex, nofollow">
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<h1>
+<span class="action-span"></span>
+<span class="action-span1">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 会员列表 </span>
+<div style="clear:both"></div>
+</h1>
+<script type="text/javascript" src="./ECSHOP 管理中心 - 会员列表_files/utils.js"></script><script type="text/javascript" src="./ECSHOP 管理中心 - 会员列表_files/listtable.js"></script>
+
+<form method="POST" action="" name="listForm" onsubmit="return confirm_bath()">
+
+<!-- start users list -->
+<div class="list-div" id="listDiv">
+<!--用户列表部分-->
+<table cellpadding="3" cellspacing="1">
+  <tbody>
+    <tr>
+      <th>编号</th>
+      <th>会员名称</th>
+      <th>邮件地址</th>
+      <th>注册日期</th>
+    </tr><tr>
+    </tr><tr>
+    <?php foreach($user as $v):?>
+    <td style="background-color: rgb(255, 255, 255);"><center><?php echo $v['user_id'];?></center></td>
+    <td class="first-cell" style="background-color: rgb(255, 255, 255);">
+      <center><?php echo $v['user_name']; ?></center></td>
+    <td style="background-color: rgb(255, 255, 255);">
+      <center><?php echo $v['email']; ?></center>
+    </td>
+       <td style="background-color: rgb(255, 255, 255);">
+        <center><?php echo $v['reg_time']; ?></center>
+      </td>
+    
+    
+  
+  </tr>
+        <?php endforeach;?>
+    <tr>
+      
+      <td align="right" nowrap="true" colspan="8">
+        <div id="turn-page">
+          <?php echo $pageinfo; ?>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<!-- end users list -->
+</form>
+
+
+<div id="footer">
+</div>
+
+</body></html>

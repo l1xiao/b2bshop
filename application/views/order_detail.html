@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0091)http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/order.php?act=info&order_id=19 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ECSHOP 管理中心 - 订单信息 </title>
+<meta name="robots" content="noindex, nofollow">
+
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css" />
+</head>
+<body style="cursor: auto;">
+
+<h1>
+  <span class="action-span">
+    <a href="<?php echo site_url('admin/order/order_list');?>">订单列表</a>
+  </span>
+  <span class="action-span1">
+    ECSHOP 管理中心
+  </span>
+  <span id="search_id" class="action-span1"> - 订单信息 </span>
+  <div style="clear:both"></div>
+</h1>
+
+ 
+
+
+<div class="list-div" style="margin-bottom: 5px">
+<table width="100%" cellpadding="3" cellspacing="1">
+  <tbody>
+    <tr>
+      <td colspan="4">
+      </td>
+    </tr>
+    <tr>
+      <th colspan="4">基本信息</th>
+    </tr>
+    <tr>
+      <td width="18%"><div align="right"><strong>订单号：</strong></div></td>
+      <td width="34%"><?php echo $order['order_sn'] ?></td>
+      <td width="15%">
+        <div align="right">
+          <strong>订单状态：</strong>
+        </div>
+      </td>
+      <td>
+        <?php 
+          switch ($order['order_status']) {
+          case '1':
+            echo '待发货';
+            break;
+          case '2':
+            echo '已发货';
+            break;
+          default:
+            echo '完成';
+            break;
+        } ?>
+      </td>
+    </tr>
+    <tr>
+      <td><div align="right"><strong>购货人ID：</strong></div></td>
+      <td><?php echo $order['user_id'];?></td>
+      <td><div align="right"><strong>下单时间：</strong></div></td>
+      <td>
+        <?php echo $order['order_time'];?>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="right">
+          <strong>订单ID</strong>
+        </div>
+      </td>
+      <td><span><?php echo $order['order_id'];?></span></td>
+      <td>
+        <div align="right">
+          <strong>客户给商家的留言：</strong>
+        </div>
+      </td>
+      <td colspan="3"><?php echo $order['postscripts'];?></td>
+    </tr>
+    <tr>
+      
+      
+    </tr>
+   
+    <tr>
+      <th colspan="4">收货人信息</th>
+      </tr>
+    <tr>
+      <td>
+        <div align="right">
+          <strong>收货人：</strong>
+        </div>
+      </td>
+      <td><?php echo $user['user_name'] ;?></td>
+      <td><div align="right"><strong>电子邮件：</strong></div></td>
+      <td><?php echo $user['email'] ;?></td>
+    </tr>
+    <tr>
+      <td><div align="right"><strong>地址：</strong></div></td>
+      <td><?php echo $order['address'] ;?></td>
+      <td><div align="right"><strong>手机：</strong></div></td>
+      <td><?php echo $order['phone'] ;?></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="list-div" style="margin-bottom: 5px">
+<table width="100%" cellpadding="3" cellspacing="1">
+  <tbody>
+    <tr>
+      <th colspan="8" scope="col">商品信息</th>
+    </tr>
+  <tr>
+    <td scope="col"><div align="center"><strong>商品名称 </strong></div></td>
+    <td scope="col"><div align="center"><strong>商品ID</strong></div></td>
+    <td scope="col"><div align="center"><strong>品牌</strong></div></td>
+    <td scope="col"><div align="center"><strong>价格</strong></div></td>
+    <td scope="col"><div align="center"><strong>数量</strong></div></td>
+    <td scope="col"><div align="center"><strong>属性</strong></div></td>
+    <td scope="col"><div align="center"><strong>库存</strong></div></td>
+    <td scope="col"><div align="center"><strong>小计</strong></div></td>
+  </tr>
+  <?php foreach ($goods as $v) :?>
+  <tr>
+    <td>
+        <center> <?php echo $v['goods_name'] ;?></center>  
+    </td>
+    <td>
+      <center> <?php echo $v['goods_id'] ;?></center>  
+    </td>
+    <td></td>
+    <td>
+      <div align="right"><center> <?php echo $v['goods_price'] ;?>元</center>  </div>
+    </td>
+    <td>
+      <div align="right">
+       <center> 
+        <?php echo $v['number'] ;?>
+       </center>  
+      </div>
+    </td>
+    <td>
+      <center><?php echo $v['goods_attr'] ;?></center>  
+    </td>
+    <td>
+      <div align="right">
+        <center><?php echo $v['goods_number'] ;?></center>  
+      </div>
+    </td>
+    <td>
+      <div align="right">      
+        <center>
+          <?php echo $v['number']*$v['goods_price'] ;?>元
+        </center>
+      </div>
+    </td>
+  </tr>
+  <?php endforeach;?> 
+    <tr>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td></td>
+    <td><div align="right"><strong>运费：</strong></div></td>
+    <td><center><?php echo $order['mail_price'] ;?></center></td>
+    <td><div align="right"><strong>合计：</strong></div></td>
+    <td>
+      <div align="right">
+        <?php
+          $price = $order['mail_price'];
+          foreach ($goods as $v) {
+            $price = $v['number']*$v['goods_price'] + $price;
+          }
+          echo '<center>'.$price.'元'.'</center>';
+        ?>
+      </div>
+    </td>
+  </tr>
+</tbody></table>
+</div>
+
+<div class="list-div" style="margin-bottom: 5px">
+<table cellpadding="3" cellspacing="1">
+  <tbody><tr>
+    <th colspan="6">操作信息</th>
+  </tr>
+  <tr>
+    <td>
+      <div align="right">
+      </div>
+      <form action="<?php $id = $order['order_id'];echo site_url("admin/order/order_change/$id") ?>" method="post" name="theForm">
+      <div align="right">
+        <strong>当前可执行操作：</strong> 
+      </div>
+    </td>
+    <td colspan="5">
+      <?php 
+          switch ($order['order_status']) {
+          case '1':
+            echo '未发货：
+      <input type="radio" value="1" checked="checked" name="order_status"/>
+      发货：
+      <input type="radio" value="2"  name="order_status"/>
+      完成：
+      <input type="radio" value="3"  name="order_status"/>';
+            break;
+          case '2':
+            echo '未发货：
+      <input type="radio" value="1"  name="order_status"/>
+      发货：
+      <input type="radio" value="2" checked="checked" name="order_status"/>
+      完成：
+      <input type="radio" value="3"  name="order_status"/>';
+            break;
+          default:
+            echo '未发货：
+      <input type="radio" value="1"  name="order_status"/>
+      发货：
+      <input type="radio" value="2"  name="order_status"/>
+      完成：
+      <input type="radio" value="3" checked="checked" name="order_status"/>';
+            break;
+        } ?>
+      
+      <input type="submit" name="submit" value="提交修改" />
+    </td>
+    </form>
+    </tr>
+  </tbody>
+</tr>
+</table>
+</div>
+
+
+
+
+</body></html>

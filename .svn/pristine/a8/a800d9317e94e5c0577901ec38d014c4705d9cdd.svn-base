@@ -1,0 +1,23 @@
+foreach ($pictures as $res) {
+				#得到缩略前图片名字，并保存到数组里
+				$goods_pic['pic_name'] = $res['file_name'];
+				$config_img['source_image'] = "./public/uploads/" . $res['file_name'];
+				$config_img['create_thumb'] = true;
+				$config_img['maintain_ratio'] = true;
+				$config_img['width'] = 160;
+				$config_img['height'] = 160;
+
+				#载入并初始化图像处理类
+				$this->load->library('image_lib',$config_img);
+				#进行缩略
+				if ($this->image_lib->resize()) {
+					# 缩略ok
+					$goods_pic['pic_thumb_name'] = $res['pic_name'] . $this->image_lib->thumb_marker. $res['file_ext'];
+					$pic_array[] = $goods_pic;
+				} else {
+					# 缩略失败
+					$data['message'] = $this->image_lib->display_errors();
+					$data['url'] = site_url('admin/goods/add');
+					$data['wait'] = 3;
+					$this->load->view('message.html',$data);
+				}

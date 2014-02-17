@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SHOP 管理中心 - 属性管理 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css" />
+  <link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span">
+  <a href="<?php echo site_url('admin/attribute/add');?>">添加属性</a>
+</span>
+<span class="action-span1">
+  <a href="index.php?act=main">SHOP 管理中心</a> 
+</span>
+<span id="search_id" class="action-span1"> - 商品属性 </span>
+<div style="clear:both"></div>
+</h1>
+
+<form method="post" action="attribute.php?act=batch" name="listForm">
+<div class="list-div" id="listDiv">
+
+  <table cellpadding="3" cellspacing="1">
+    <tbody>
+		<tr>
+			<th><input onclick="listTable.selectAll(this, &quot;checkboxes[]&quot;)" type="checkbox">编号 </th>
+			<th>属性名称</th>
+			<th>商品类型ID</th>
+			<th>属性值的录入方式</th>
+			<th>可选值列表</th>
+			<th>排序</a></th>
+			<th>操作</th>
+		</tr>
+    <?php foreach($attrs as $v) :?>
+    <tr>
+			<td nowrap="true" valign="top"><span>
+        <input value="1" name="checkboxes[]" type="checkbox">
+          <?php echo $v['attr_id'];?>
+        </span></td>
+			<td class="first-cell" nowrap="true" valign="top">
+        <span onclick="listTable.edit(this, 'edit_attr_name', 1)">
+          <?php echo $v['attr_name'];?>
+        </span>
+      </td>
+			<td nowrap="true" valign="top">
+        <span>
+          <?php echo $v['type_id'];?>
+        </span>
+      </td>
+			<td nowrap="true" valign="top">
+        <span>
+          <?php 
+            switch ($v['attr_input_type']) {
+              case '0':
+                echo "为手工录入";
+                break;
+              case '1':
+                echo "为从列表中选择";
+                break;
+
+              
+              default:
+                echo "为文本域";
+                break;
+            }
+           ;?>
+        </span>
+      </td>
+			<td valign="top">
+        <span>
+          <?php echo $v['attr_value'];?>
+        </span>
+      </td>
+			<td align="right" nowrap="true" valign="top">
+        <span >
+          <?php echo $v['sort_order'];?>
+        </span>
+      </td>
+			<td align="center" nowrap="true" valign="top">
+				<a href="" title="">
+          编辑 
+        </a>|
+				<a href="" onclick="removeRow(1)" title="">
+          移除
+        </a>
+			</td>
+		</tr>
+    <?php endforeach;?>
+
+       
+      </tbody></table>
+
+  <table cellpadding="4" cellspacing="0">
+    <tbody><tr>
+        <td align="right" style="background-color: rgb(255, 255, 255);">      
+          <div id="turn-page">
+            <?php echo $pageinfo ?>
+          </div>
+        </td>
+    </tr>
+  </tbody></table>
+</div>
+
+</form>
+
+<div id="footer">
+	版权所有 &copy;
+</div>
+</div>
+
+</body>
+</html>

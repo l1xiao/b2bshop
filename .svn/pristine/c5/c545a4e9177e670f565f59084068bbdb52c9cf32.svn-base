@@ -1,0 +1,11 @@
+<form action="localhost/b2bshop/index.php/admin/goods/photo_state" name="" method="post" >
+						<select name="pic_usage">
+							<option value="0">商品展示</option>
+							<option value="1">图文说明</option>
+							<option value="2" >首页幻灯片</option>
+						</select>
+						<input type="text" name="pic_goods_id" value = '23'>
+						<input type="text" name ="pic_description" value="asd">
+						<input type="submit" name="" value=" 确定 ">
+</form>
+	

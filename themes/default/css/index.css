@@ -1,0 +1,53 @@
+.column{
+    padding: 10px;
+}
+
+body { padding-top: 60px; }
+
+body div a.navbar-brand{
+    color:#fff;
+}
+
+.list-group .center{
+    text-align: center;
+}
+
+a[href="javascript:void(0)"]{
+    cursor: default;
+}
+
+p.right{
+    text-align: right;
+}
+
+.floatright{
+    float: right;
+}
+
+
+.footer{
+    background-color: black;
+    border-radius: 20px 20px 0 0;
+    margin-top: 20px;
+}
+
+.footer a{
+    color: #999;
+}
+
+#tbody td{
+    vertical-align:middle;
+}
+
+blockquote{
+    margin-left: 100px;
+}
+
+.detail_summary h4{
+    padding: 30px;
+}
+
+.detail_summary  .btn-success{
+    margin-top: 60px;
+    width:50%;
+}

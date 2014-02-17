@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0086)http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/user_msg.php?act=list_all -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ECSHOP 管理中心 - 会员留言 </title>
+<meta name="robots" content="noindex, nofollow">
+
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span1"></span><span id="search_id" class="action-span1"> - 会员留言 </span>
+<div style="clear:both"></div>
+</h1>
+
+<form method="POST" action="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/user_msg.php?act=batch_drop" name="listForm" onsubmit="return confirm_bath()">
+<!-- start article list -->
+<div class="list-div" id="listDiv">
+<table cellpadding="3" cellspacing="1">
+  <tbody>
+    <tr>
+      <th>
+        编号
+      </th>
+      <th>用户名</th>
+      <th>留言内容</th>
+      <th>留言时间</th>
+      <th>状态</th>
+      <th>回复</th>
+      <th>操作</th>
+    </tr>
+    <?php foreach($user as $v):?>
+    <tr>
+      <td><center><?php echo $v['id'] ;?></center></td>
+      <td align="center"><center><?php echo $v['user_name'] ;?></center></td>
+      <td align="left"><?php echo $v['comments'] ;?></td>
+      <td align="center" nowrap="nowrap"><?php echo $v['time'] ;?></td>
+      <td align="center"><?php if($v['is_showed'] == 1){echo '显示';}else{echo '隐藏';} ?></td>
+      <td align="center"><?php if($v['is_reply'] == 1){echo '是';}else{echo '否';} ;?></td>
+      <td align="center">
+        <a href="<?php $id = $v['id'];echo site_url("admin/user/comments_delete/$id") ;?>">隐藏</a>|
+        <a href="<?php $id = $v['id'];echo site_url("admin/user/comments_show/$id") ;?>">显示</a>   
+      </td>
+  </tr>  
+  <?php endforeach;?>
+
+  </tbody>
+</table>
+
+<table id="page-table" cellspacing="0">
+<tbody><tr>
+  <td></td>
+  <td align="right" nowrap="true">
+        <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+      <div id="turn-page">
+        <?php echo $pageinfo;?>  
+      </div>
+  </td>
+</tr>
+</tbody></table>
+</div>
+<!-- end article list -->
+</form>
+
+</body></html>

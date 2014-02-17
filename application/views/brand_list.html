@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SHOP 管理中心 - 品牌管理 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css" />
+  <link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span"><a href="<?php echo site_url('admin/brand/add');?>">添加品牌</a></span>
+<span class="action-span1">SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品品牌 </span>
+<div style="clear:both"></div>
+</h1>
+
+<form method="post" action="" name="listForm">
+<!-- start brand list -->
+<div class="list-div" id="listDiv">
+
+  <table cellpadding="3" cellspacing="1">
+    <tbody>
+		<tr>
+			<th>品牌名称</th>
+			<th>品牌网址</th>
+			<th>品牌描述</th>
+			<th>操作</th>
+		</tr>
+    <?php foreach($brands as $brand) :?>
+    <tr>
+			<td class="first-cell"><span style="float:right"></span>
+			<span  title="" style=""><?php echo $brand['brand_name'];?></span>
+			</td>
+			<td><?php echo $brand['url'];?></td>
+			<td align="left" ><?php echo $brand['brand_desc'];?></td>
+			<td align="center">
+				<a href="<?php $id = $brand['brand_id']; echo site_url("admin/brand/edit/$id");?>">编辑</a> |
+				<a href="<?php $id = $brand['brand_id'];echo site_url("admin/brand/delete/$id");?>">移除</a> 
+			</td>
+		</tr>
+  <?php endforeach;?>
+    <tr>
+      <td align="right" nowrap="true" colspan="6" style="background-color: rgb(255, 255, 255);">
+            <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+            <div id="turn-page">
+            <?php echo $pageinfo;?>
+      </div>
+      </td>
+    </tr>
+  </tbody></table>
+
+<!-- end brand list -->
+</div>
+</form>
+
+
+<div id="footer">
+	版权所有 &copy;lxys</div>
+</div>
+
+</body>
+</html>

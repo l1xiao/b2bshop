@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0088)http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=list -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ECSHOP 管理中心 - 用户评论 </title>
+<meta name="robots" content="noindex, nofollow">
+
+<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css">
+
+<style type="text/css"></style></head>
+<body>
+
+<h1>
+<span class="action-span1"><a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/index.php?act=main">ECSHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 用户评论 </span>
+<div style="clear:both"></div>
+</h1>
+<script type="text/javascript" src="./goods_comments_files/utils.js"></script><script type="text/javascript" src="./goods_comments_files/listtable.js"></script><div class="form-div">
+  <form action="javascript:searchComment()" name="searchForm">
+    <img src="./goods_comments_files/icon_search.gif" width="26" height="22" border="0" alt="SEARCH">
+    输入评论内容 <input type="text" name="keyword"> <input type="submit" class="Button" value=" 搜索 ">
+  </form>
+</div>
+
+<form method="POST" action="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=batch_drop" name="listForm" onsubmit="return confirm_bath()">
+
+<!-- start comment list -->
+<div class="list-div" id="listDiv">
+
+<table cellpadding="3" cellspacing="1">
+  <tbody><tr>
+    <th>
+      <input onclick="listTable.selectAll(this, &quot;checkboxes&quot;)" type="checkbox">
+      <a href="javascript:listTable.sort('comment_id'); ">编号</a> </th>
+    <th><a href="javascript:listTable.sort('user_name'); ">用户名</a></th>
+    <th><a href="javascript:listTable.sort('comment_type'); ">类型</a></th>
+    <th><a href="javascript:listTable.sort('id_value'); ">评论对象</a></th>
+    <th><a href="javascript:listTable.sort('ip_address'); ">IP地址</a></th>
+    <th><a href="javascript:listTable.sort('add_time'); ">评论时间</a><img src="./goods_comments_files/sort_desc.gif"></th>
+    <th>状态</th>
+    <th>操作</th>
+  </tr>
+    <tr>
+    <td style="background-color: rgb(255, 255, 255);"><input value="2" name="checkboxes[]" type="checkbox">2</td>
+    <td style="background-color: rgb(255, 255, 255);">ecshop</td>
+    <td style="background-color: rgb(255, 255, 255);">商品</td>
+    <td style="background-color: rgb(255, 255, 255);"><a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/goods.php?id=22" target="_blank">多普达Touch HD</a></td>
+    <td style="background-color: rgb(255, 255, 255);">0.0.0.0</td>
+    <td align="center" style="background-color: rgb(255, 255, 255);">2009-05-12 21:48:15</td>
+    <td align="center" style="background-color: rgb(255, 255, 255);">隐藏</td>
+    <td align="center" style="background-color: rgb(255, 255, 255);">
+      <a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=reply&id=2">查看详情</a> |
+      <a href="javascript:" onclick="listTable.remove(2, &#39;您确认要删除这条记录吗?&#39;)">移除</a>
+    </td>
+  </tr>
+      <tr>
+    <td style="background-color: rgb(255, 255, 255);"><input value="1" name="checkboxes[]" type="checkbox">1</td>
+    <td style="background-color: rgb(255, 255, 255);">ecshop</td>
+    <td style="background-color: rgb(255, 255, 255);">商品</td>
+    <td style="background-color: rgb(255, 255, 255);"><a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/goods.php?id=12" target="_blank">摩托罗拉A810</a></td>
+    <td style="background-color: rgb(255, 255, 255);">0.0.0.0</td>
+    <td align="center" style="background-color: rgb(255, 255, 255);">2009-05-12 21:45:20</td>
+    <td align="center" style="background-color: rgb(255, 255, 255);">显示</td>
+    <td align="center" style="background-color: rgb(255, 255, 255);">
+      <a href="http://localhost/ECShop_V2.7.3_UTF8_release1106/upload/admin/comment_manage.php?act=reply&id=1">查看详情</a> |
+      <a href="javascript:" onclick="listTable.remove(1, &#39;您确认要删除这条记录吗?&#39;)">移除</a>
+    </td>
+  </tr>
+      </tbody></table>
+
+  <table cellpadding="4" cellspacing="0">
+    <tbody><tr>
+      <td style="background-color: rgb(255, 255, 255);">
+      <div>
+      <select name="sel_action">
+        <option value="remove">删除评论</option>
+        <option value="allow">允许显示</option>
+        <option value="deny">禁止显示</option>
+      </select>
+      <input type="hidden" name="act" value="batch">
+      <input type="submit" name="drop" id="btnSubmit" value=" 确定 " class="button" disabled="true"></div></td>
+      <td align="right" style="background-color: rgb(255, 255, 255);">      <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+            <div id="turn-page">
+        总计  <span id="totalRecords">2</span>
+        个记录分为 <span id="totalPages">1</span>
+        页当前第 <span id="pageCurrent">1</span>
+        页，每页 <input type="text" size="3" id="pageSize" value="15" onkeypress="return listTable.changePageSize(event)">
+        <span id="page-link">
+          <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+          <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+          <a href="javascript:listTable.gotoPageNext()">下一页</a>
+          <a href="javascript:listTable.gotoPageLast()">最末页</a>
+          <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+            <option value="1">1</option>          </select>
+        </span>
+      </div>
+</td>
+    </tr>
+  </tbody></table>
+
+</div>
+<!-- end comment list -->
+
+</form>
+
+    </div>
+    </td>
+  </tr>
+  </tbody></table>
+  <div id="footer">
+  版权所有 &copy;lxys</div>
+
+
+</div>
+
+
+
+
+
+</body></html>

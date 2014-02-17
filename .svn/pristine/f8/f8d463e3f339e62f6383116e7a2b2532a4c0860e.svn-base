@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SHOP 管理中心 - 添加分类 </title>
+		<meta name="robots" content="noindex, nofollow">
+
+		<link href="<?php echo base_url('application/views/styles/general.css');?>" rel="stylesheet" type="text/css" />
+	  	<link href="<?php echo base_url('application/views/styles/main.css');?>" rel="stylesheet" type="text/css" />
+	<style type="text/css"> li{list-style:none;}</style></head>
+<body>
+
+<h1>
+
+<span class="action-span1">
+	SHOP 管理中心
+</span>
+	<span id="search_id" class="action-span1"> - 添加分类 </span>
+<div style="clear:both"></div>
+</h1>
+<!-- start add new category form -->
+<div class="main-div">
+
+	<table width="100%" id="general-table">
+		<tbody>
+			<?php foreach ($pictures as $v) :?>
+				<tr>				
+					<td>
+						<?php echo $v['pic_name'];?>,
+						<?php if($v['pic_thumb_name']){echo '已';}else {echo '未';} ?>缩略
+						<br>
+						<img src="<?php $id = $v['pic_name'];echo base_url("public/uploads/$id")  ;?>" alt="" title="图片"  style="width:100px;height:100px;" />
+						<br>
+						<a href="<?php $pic_id = $v['goods_pic_id'];echo site_url("admin/goods/get_thumb/$pic_id")  ;?>">缩略</a>/
+						<a href="<?php $pic_id = $v['goods_pic_id'];echo site_url("admin/goods/delete_pic/$pic_id");?>">删除</a>
+						
+						<br>用途:
+						<form action="<?php $pic_id = $v['goods_pic_id'];echo site_url("admin/goods/photo_state/") ;?> "name="" method="POST" >
+						<select name="pic_usage">
+							<option <?php if ($v['pic_usage'] == 0) echo "selected='selected'";?>value="0">商品展示</option>
+							<option <?php if ($v['pic_usage'] == 1) echo "selected='selected'";?> value="1">图文说明</option>
+							<option  <?php if ($v['pic_usage'] == 2) echo "selected='selected'";?>value="2" >首页幻灯片</option>
+						</select>
+						<br>描述:<br>
+						
+						<input type="hidden" value="<?php echo $v['goods_pic_id'];?>" name="goods_pic_id" />
+						<input type="text" name ="pic_description" value="<?php echo $v['pic_description'];?>">
+						<br>
+						<input type="submit" value=" 确定 ">
+						</form>
+	
+					</td>	
+      			</tr>
+      		<?php endforeach ?>
+      	</tbody>
+  	</table>
+    <input type="hidden" name="act" value="insert">
+    <input type="hidden" name="old_cat_name" value="">
+  
+</div>
+
+
+<div id="footer">版权所有 ©lxys</div>
+</body></html>
